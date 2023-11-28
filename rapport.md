@@ -31,7 +31,7 @@ Pour chacune des deux opérations à réaliser vous trouverez en suivant :
 	- [1.6 Programme refactoré](#16-programme-refactoré)
 		- [1.6.1 Programme refactoré par Eclipse :](#161-programme-refactoré-par-eclipse-)
 		- [1.6.2 Programme refactoré à l'aide d'Eclipse et manuellement :(ce que l'on aurait souhaité obtenir)](#162-programme-refactoré-à-laide-declipse-et-manuellement-ce-que-lon-aurait-souhaité-obtenir)
-	- [1.7 Test de ChatGPT](#17-test-de-chatgpt)
+	- [1.7 Question 3 - Test de ChatGPT](#17-question-3---test-de-chatgpt)
 	- [1.7.1 Prompt de ChatGPT](#171-prompt-de-chatgpt)
 	- [1.7.2 Analyse des résultats obtenus](#172-analyse-des-résultats-obtenus)
 - [2. Extract Class](#2-extract-class)
@@ -46,9 +46,13 @@ Pour chacune des deux opérations à réaliser vous trouverez en suivant :
 		- [1.6.1 État du programme avant l'opération move sur les méthodes :](#161-état-du-programme-avant-lopération-move-sur-les-méthodes-)
 		- [1.6.2 État du programme après l'opération move sur les méthodes concernées :](#162-état-du-programme-après-lopération-move-sur-les-méthodes-concernées-)
 		- [1.6.3 Programme refactoré avec Eclipse et avec l'aide manuel (ce que l'on aurait souhaité obtenir)](#163-programme-refactoré-avec-eclipse-et-avec-laide-manuel-ce-que-lon-aurait-souhaité-obtenir)
-	- [1.7 Test de ChatGPT](#17-test-de-chatgpt-1)
+	- [1.7 Question 3 - Test de ChatGPT](#17-question-3---test-de-chatgpt-1)
 	- [1.7.1 Prompt de ChatGPT](#171-prompt-de-chatgpt-1)
 	- [1.7.2 Analyse des résultats obtenus](#172-analyse-des-résultats-obtenus-1)
+- [Étude de l'opération de refactoring Extract Interface](#étude-de-lopération-de-refactoring-extract-interface)
+	- [Question 1 Appliquer l'opération de refactoring](#question-1-appliquer-lopération-de-refactoring)
+	- [Question 2 factorisation ou duplication](#question-2-factorisation-ou-duplication)
+	- [Question 3](#question-3)
 
 # 1. Extract Method
 
@@ -168,14 +172,27 @@ Le processus peut s'effectuer en 4 étapes :
 
 ![Alt text](extract_method_1.png)
 
-![Alt text](image.png)
-![Alt text](image.png)
+![Alt text](extract_method_2.png)
 
-![Alt text](image.png)
+![Alt text](extract_method_3.png)
 
-![Alt text](image.png)
+![Alt text](extract_method_4.png)
 
-![Alt text](image.png)
+![Alt text](extract_method_5.png)
+
+![Alt text](extract_method_6.png)
+
+![Alt text](extract_method_7.png)
+
+![Alt text](extract_method_8.png)
+
+![Alt text](extract_method_9.png)
+
+![Alt text](extract_method_10.png)
+
+![Alt text](extract_method_11.png)
+
+![Alt text](extract_method_12.png)
 
 
 ## 1.4 Avis sur l'intérêt de l'opération et sur sa mise en oeuvre sous eclipse
@@ -385,7 +402,7 @@ public class WeatherReportMe {
 ```
 
 
-## 1.7 Test de ChatGPT
+## 1.7 Question 3 - Test de ChatGPT
 
 ## 1.7.1 Prompt de ChatGPT
 
@@ -596,35 +613,21 @@ Le processus peut s'effectuer en 4 étapes :
 
 ## 1.3 Copie des écrans des étapes de refactoring sur Eclipse
 
-![Alt text](image.png)
+![Alt text](extract_class_1.png)
 
-![Alt text](image.png)
+![Alt text](extract_class_2.png)
 
-![Alt text](image.png)
+![Alt text](extract_class_3.png)
 
-![Alt text](image.png)
+![Alt text](extract_class_4.png)
 
-![Alt text](image.png)
+![Alt text](extract_class_5.png)
 
-![Alt text](image.png)
+![Alt text](extract_class_6.png)
 
-![Alt text](image.png)
+![Alt text](extract_class_7.png)
 
-![Alt text](image.png)
-
-![Alt text](image-1.png)
-
-![Alt text](image.png)
-
-![Alt text](image.png)
-
-![Alt text](image.png)
-
-![
-	
-
-](image.png)
-
+![Alt text](extract_class_8.png)
 
 <video src="extract_class_finish.mp4" controls title="
 "></video>
@@ -1057,7 +1060,7 @@ public class Main {
 
 ```
 
-## 1.7 Test de ChatGPT
+## 1.7 Question 3 - Test de ChatGPT
 
 ## 1.7.1 Prompt de ChatGPT
 
@@ -1069,5 +1072,96 @@ En effet comme le chat n'a pas réecrire de méthode il n'a pas vraiment de trav
 Ici il ne doit juste que simplement copier les méthodes et attributs à la nouvelle place et réadapter la classe d'origine par des appels de méthodes. 
 Les opérations demander sont donc plus simple et permet au résultat d'être plus efficient. 
 
+# Étude de l'opération de refactoring Extract Interface
+
+## Question 1 Appliquer l'opération de refactoring
+
+Lorsque nous implémentons l'ensemble des classes dans une seule classe ou que nous sélectionnont les 4 fichiers java séparé l'opération de refactoring ne fonctionne pas. 
+Dans le premier cas l'interface créée est vide, dans l'autre l'opération d'extraction d'interface n'est pas valide. 
+
+A l'inverse quand nous réalisons l'opération de refactoring indiviuellement il est possible d'extraire une par une les interfaces des classes. 
+Toutefois nous allons dupliquer les interfaces existantes car pour chaque classe une nouvelle interface sera créée. 
+Avec les méthodes propres à chaque classe extraite alors qu'il y a des méthodes communes. 
+
+## Question 2 factorisation ou duplication
+
+Nous pouvons remarqué que les classes partagent entre elles des méthodes communes, par exemple la méthode isEmpty(). 
+Il est possible donc de s'atteindre à une factorisation des méthodes afin d'éviter la duplication.
+Or l'opération d'extraction d'interface n'admet pas une telle fonctionnalité. 
+Il est seulement possible d'extraire une interface par classe, donc nous allons forcément dupliquer les méthodes car nous allons créer plusieurs interfaces avec les méthodes add, isEmpty, peek etc...  
+En effet l'opération d'extraction d'interface d'eclipse ne prends pas en compte les interfaces précédemment créée. 
+Il n'est pas possible d'indiquer dans l'IDE que certaines méthodes existe déjà dans une interface, il faut l'implémenter manuellement.
+
+## Question 3
+
+Code java obtenu
+
+```Java
+package refactoring.extract.interfaces.manuelles;
 
 
+public interface IList {
+
+    boolean add(Object o);
+
+    boolean isEmpty();
+
+    Object get(int i);
+
+}
+```
+
+```Java
+package refactoring.extract.interfaces.manuelles;
+
+
+public interface IListChaineInterface extends IList {
+
+	Object peek();
+
+	Object poll();
+
+}
+```
+
+```Java
+package refactoring.extract.interfaces.manuelles;
+
+
+public interface IQueueAvecPriorite extends IQueueDoubleEntree {
+
+    Object comparator();
+
+}
+```
+
+```Java
+package refactoring.extract.interfaces.manuelles;
+
+
+public interface IQueueDoubleEntree {
+
+    boolean add(Object o);
+
+    boolean isEmpty();
+
+    Object peek();
+
+    Object poll();
+
+}
+```
+
+Juste la signature des classes 
+
+```Java
+
+public class ListeChainee implements IListChaineInterface {}
+
+public class ListeTableau  implements IList {}
+
+public class QueueAvecPriorite implements IQueueAvecPriorite{}
+
+public class QueueDoubleEntree implements IQueueDoubleEntree{}
+
+```
