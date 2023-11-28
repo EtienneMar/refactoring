@@ -1068,3 +1068,6 @@ Cela est notamment dû car nous avions une idée précise de comment serait la c
 En effet comme le chat n'a pas réecrire de méthode il n'a pas vraiment de travail si nous pouvons le permettre de "synthèse" ou de "écriture" de code. 
 Ici il ne doit juste que simplement copier les méthodes et attributs à la nouvelle place et réadapter la classe d'origine par des appels de méthodes. 
 Les opérations demander sont donc plus simple et permet au résultat d'être plus efficient. 
+
+
+
